@@ -16,7 +16,7 @@ public class UsuarioServiceimpl implements UsuarioService{
     private UsuarioRepository usuarioRepository;
     public boolean login(String user, String pass){
         boolean result = false;
-        List <Usuario> listusuario = usuarioRepository.findByNombre(user);
+        List <Usuario> listusuario = usuarioRepository.findAll();
         Usuario usuario = listusuario.get(0);
         System.out.println(usuario.toString());
         if(usuario != null){
