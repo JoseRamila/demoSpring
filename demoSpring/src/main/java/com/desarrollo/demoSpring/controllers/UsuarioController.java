@@ -14,7 +14,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @RequestMapping("login/")
+    @RequestMapping("/login")
     public String showLogin(Model model) {
         return "login";
 	}
