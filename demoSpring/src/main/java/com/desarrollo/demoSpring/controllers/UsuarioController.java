@@ -16,13 +16,15 @@ public class UsuarioController {
         return "login";
 	}
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+   /* @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@RequestParam("username") String name,
                         @RequestParam("pass") String pass) {
         boolean isLogin = usuarioService.login(name,pass);
         if(isLogin) {return "index";}
         return"login";
     }
+
+    */
 
 
 }
