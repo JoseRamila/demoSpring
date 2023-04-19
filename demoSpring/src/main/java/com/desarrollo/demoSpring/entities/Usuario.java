@@ -62,4 +62,6 @@ public class Usuario {
 				", email='" + email + '\'' +
 				'}';
 	}
+
+
 }
