@@ -41,7 +41,7 @@ public class UsuarioController {
             return "redirect:/login";
         }
         else{
-            model.addAttribute("error", "Password change failed")
+            model.addAttribute("error", "Password change failed");
             return "changepassword";
         }
     }

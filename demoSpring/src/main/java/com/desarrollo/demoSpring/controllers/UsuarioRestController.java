@@ -24,15 +24,13 @@ public class UsuarioRestController {
         return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("changepassrest")
-    public ResponseEntity<String> changePassword(RequestBody ChangePassRequest changePassRequest){
-        if(usuarioService.changePassword(changePassRequest.getUsername(), changePassRequest.getOldPass(), changePassRequest.getNewPass())){
-            return new ResponseEntity<String>("Successful change", HttpStatus.OK);
-        }
-        else{
-            return new ResponseEntity<String>("Change failed, wrong data", HttpStatus.NOT_FOUND);
+    @PostMapping("/changepassrest")
+    public ResponseEntity<String> changePassword(@RequestBody ChangePassRequest changePassRequest) {
+        if (usuarioService.changePassword(changePassRequest.getUsername(), changePassRequest.getOldPass(), changePassRequest.getNewPass())) {
+            return new ResponseEntity<String>("Successfully change", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
         }
     }
-
 
 }

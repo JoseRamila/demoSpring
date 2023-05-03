@@ -12,8 +12,8 @@ public class ChangePassRequest {
     }
 
    public String getUsername() {
-        return username;
-
+       return username;
+   }
     public void setUsername(String username) {
         this.username = username;
     }
@@ -35,15 +35,5 @@ public class ChangePassRequest {
     }
 
 
-
-
-
-
-
-
-
-
-
-    }
 
 }
