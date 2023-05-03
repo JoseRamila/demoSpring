@@ -30,13 +30,6 @@ public class ProductController {
         return "products";
     }
 
-    /**
-     * View a specific product by its id.
-     *
-     * @param id
-     * @param model
-     * @return
-     */
     @RequestMapping(value = "product/{id}")
     public String showProduct(@PathVariable Integer id, Model model) {
         model.addAttribute("product", productService.getProductById(id));
@@ -75,20 +68,9 @@ public class ProductController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam("username") String name, @RequestParam("pass") String pass){
-        System.out.println(name);
-        System.out.println(pass);
-        return null;
-    }
 
 
-    /**
-     * Delete product by its id.
-     *
-     * @param id
-     * @return
-     */
+
     @GetMapping("product/delete/{id}")
     public String delete(@PathVariable Integer id) {
         productService.deleteProduct(id);
