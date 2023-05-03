@@ -1,8 +1,6 @@
 package com.desarrollo.demoSpring.services;
 
 
-
-import com.desarrollo.demoSpring.entities.Product;
 import com.desarrollo.demoSpring.entities.Usuario;
 import com.desarrollo.demoSpring.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +20,19 @@ public class UsuarioServiceimpl implements UsuarioService{
         if(usuario != null){
             if(usuario.getPassword().equals(pass))
                 result = true;
+        }
+        return result;
+    }
+    @Override
+    public boolean changePassword(String user, String oldPass, String newPass) {
+        boolean result=false;
+        List<Usuario> listUsuario = usuarioRepository.findByNombre(user);
+        if(listUsuario.isEmpty()) return result;
+        Usuario usuario = listUsuario.get(0);
+        if(login(user, oldPass)){
+            usuario.setPassword(newPass);
+            usuarioRepository.save(usuario);
+            result = true;
         }
         return result;
     }
